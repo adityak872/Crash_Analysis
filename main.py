@@ -23,7 +23,6 @@ def main():
 
     try:
         # Analysis 1: Number of crashes where males killed > 2
-        '''
         analysis_1_result = Analysis.analysis_1(primary_person_df)
         save_result(analysis_1_result,"Analysis_1")
         print(f"Analysis 1: Completed --- ")
@@ -63,19 +62,19 @@ def main():
         analysis_8_result = Analysis.analysis_8(primary_person_df,units_df)
         save_result(analysis_8_result, "Analysis_8")
         print(f"Analysis 8: Completed --- ")
-        '''
+        
         # Analysis 9: Count of distinct crash IDs where no damaged property was observed,
         # and damage level is above 4, with car insurance
         analysis_9_result = Analysis.analysis_9(damages_df, units_df)
         save_result(analysis_9_result, "Analysis_9")
         print(f"Analysis 9: Completed --- ")
-        '''
+    
         # Analysis 10: Top 5 vehicle makes where drivers are charged with speeding offenses,
         # have valid licenses, use top 10 vehicle colors, and are licensed in top 25 states
         analysis_10_result = Analysis.analysis_10(charges_df,primary_person_df, units_df)
         save_result(analysis_10_result, "Analysis_10")
         print(f"Analysis 10: Completed --- ")
-        '''
+
         print("Crash_Analysis Completed.")
  
     except Exception as e:
