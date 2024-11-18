@@ -22,6 +22,7 @@ def main():
     charges_df = ingestion.load_csv(FILES["Charges_use"])
 
     try:
+        
         # Analysis 1: Number of crashes where males killed > 2
         analysis_1_result = Analysis.analysis_1(primary_person_df)
         save_result(analysis_1_result,"Analysis_1")

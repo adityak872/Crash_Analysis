@@ -254,7 +254,7 @@ class Analysis:
         Task:  
             Count distinct Crash IDs where:
             1. No damaged property was observed.
-            2. Damage level (VEH_DMAG_SCL~) is above 4. == 'DAMAGED 5'
+            2. Damage level (VEH_DMAG_SCL~) is above 4 > DAMAGED 4
             3. Vehicle avails valid insurance.
 
         Assumption: Crashed car signifies passenger car only , excluding truck , buses, ambulance and etc.
@@ -274,7 +274,7 @@ class Analysis:
 
             # filter for level 5 and valid insurance in Units table
             damaged_valid_insurance = units_df.filter(
-                ((col("VEH_DMAG_SCL_1_ID") == "DAMAGED 5") | (col("VEH_DMAG_SCL_2_ID") == "DAMAGED 5")) &  
+                ((col("VEH_DMAG_SCL_1_ID") > "DAMAGED 4") | (col("VEH_DMAG_SCL_2_ID") > "DAMAGED 4")) &  
                 (col("FIN_RESP_TYPE_ID").isin(valid_insurance)))
 
             # join damage and units tables on CRASH_ID
