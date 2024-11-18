@@ -262,7 +262,7 @@ class Analysis:
             damages_df: damages_use dataframe
             units_df: units_use dataframe
         return: 
-            state with the highest number of crashes
+            state with the highest number of crashes cars
         """
         try:
             valid_insurance = ANALYSIS_CONFIG['valid_insurance']
